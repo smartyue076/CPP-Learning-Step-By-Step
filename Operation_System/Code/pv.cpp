@@ -42,6 +42,9 @@ void Buffer::produce(int thread_id, int num)
     // Wait if the buffer is full
     not_full.wait(unique_lock, [this]()
                   { return buffer_size != BUFFER_CAPACITY; });
+    // 1. release lock
+    // 2. wait for condition is true
+    // 2. add lock
 
     // Add input to buffer
     buffer[right] = num;

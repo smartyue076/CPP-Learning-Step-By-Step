@@ -35,25 +35,25 @@ ListNode *removeElements(ListNode *head, int val)
 }
 
 // remove elements with dummynode
-ListNode *removeElements(ListNode *head, int val)
-{
-    ListNode *dummynode = new ListNode(0);
-    dummynode->next = head;
-    ListNode *cur = dummynode;
-    while (cur != NULL and cur->next != NULL)
-    {
-        if (cur->next->val == val)
-        {
-            ListNode *tmp = cur->next;
-            cur->next = cur->next->next;
-            delete tmp;
-        }
-        else
-        {
-            cur = cur->next;
-        }
-    }
-    head = dummynode->next;
-    delete dummynode;
-    return head;
-}
+// ListNode *removeElements(ListNode *head, int val)
+// {
+//     ListNode *dummynode = new ListNode(0);
+//     dummynode->next = head;
+//     ListNode *cur = dummynode;
+//     while (cur != NULL and cur->next != NULL)
+//     {
+//         if (cur->next->val == val)
+//         {
+//             ListNode *tmp = cur->next;
+//             cur->next = cur->next->next;
+//             delete tmp;
+//         }
+//         else
+//         {
+//             cur = cur->next;
+//         }
+//     }
+//     head = dummynode->next;
+//     delete dummynode;
+//     return head;
+// }
